@@ -1,0 +1,52 @@
+# my-demo-ca
+Создание пользователя sshuser на серверах 
+Создаем самого пользователя: 
+useradd sshuser -u 1010 
+опция -u позволяет указать идентификатор пользователя сразу при создании 
+Задаем пароль: 
+passwd sshuser 
+Добавляем в группу wheel: 
+usermod -aG wheel sshuser 
+Добавляем строку в /etc/sudoers: 
+sshuser ALL=(ALL) NOPASSWD:ALL 
+Позволяет запускать sudo без аутентификации 
+
+
+Создание пользователя net_admin на Ecorouter 
+
+Создаем самого пользователя: 
+
+username net_admin 
+
+
+Задаем пароль: 
+password P@ssw0rd 
+Присваиваем привилегии администратора: 
+role admin
+adduser sshuser -u 1010 
+
+passwd sshuser 
+
+P@ssw0rd 
+
+P@ssw0rd 
+
+echo "sshuser ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers 
+
+usermod -aG wheel sshuser 
+
+sudo -i
+
+\\
+
+username net_admin 
+
+password P@$$word 
+
+role admin 
+
+exit 
+
+exit 
+
+write
